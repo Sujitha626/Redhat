@@ -20,6 +20,14 @@ public class Engineer extends Employee{
 		// TODO Auto-generated method stub
 		return super.getDetails()+ " Stream: "+stream;
 	}
+
+	public String getStream() {
+		return stream;
+	}
+
+	public void setStream(String stream) {
+		this.stream = stream;
+	}
 	
 	
 
