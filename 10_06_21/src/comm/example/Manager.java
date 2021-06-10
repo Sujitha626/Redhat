@@ -7,11 +7,14 @@ public class Manager extends Employee {
 		super();
 	}
 
-	public Manager(Integer employeeId, String firstName, String lastName, String email,String departmentName) {
-		super(employeeId, firstName, lastName, email);
+	
+
+	public Manager(Integer employeeId, String firstName, String lastName, String email, EmployeeType employeeType,String departmentName) {
+		super(employeeId, firstName, lastName, email, employeeType);
 		this.departmentName=departmentName;
-		
 	}
+
+
 
 	public String getDepartmentName() {
 		return departmentName;
