@@ -1,6 +1,8 @@
 package comm.example;
 
-public class MyStack {
+import java.util.Arrays;
+
+public class MyStack1 {
 	private int[] info;
 	private int index;
 	private int size;
@@ -16,7 +18,6 @@ public class MyStack {
 		System.out.println("stack creaated sucessfully..!");
 	}
 
-	
 	public void push(int item)
 	{
 		if(index>=size)
@@ -43,17 +44,19 @@ public class MyStack {
 			System.out.println("popped-->> "+info[index--]);
 		}
 	}
-
-
-	public int[] displayStack() {
-		// TODO Auto-generated method stub
-		return null;
+	
+	public void searchStack(int item)
+	{
+		int position=Arrays.binarySearch(info, item);
+		if(position>=0)
+			System.out.println("item found at "+position+" position");
+		else
+			System.out.println("item not found.");
 	}
-
-
-	public void searchStack(int value) {
-		// TODO Auto-generated method stub
-		
+	
+	public int[] displayStack()
+	{
+		return info;
 	}
 	
 }
