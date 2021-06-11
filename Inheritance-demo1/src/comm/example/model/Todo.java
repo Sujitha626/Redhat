@@ -2,6 +2,7 @@ package comm.example.model;
 
 import java.util.UUID;
 
+@SuppressWarnings("unused")
 public class Todo {
 
 	private String todoId;

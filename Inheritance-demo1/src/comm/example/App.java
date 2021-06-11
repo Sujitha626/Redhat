@@ -5,6 +5,7 @@ import comm.example.model.Todo;
 
 public class App {
 
+	@SuppressWarnings("unused")
 	public static void main(String[] args) {
 		App app=new App();
 	/*	Employee employee=new Manager("John", "Doe", "john@email.com", 10000, "Sales");
