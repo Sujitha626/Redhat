@@ -1,43 +1,40 @@
 package comm.example;
 
 public class Student {
-	
-	private int studentId;
-	private String studentName;
-	private double GPA;
+	private String id;
+	private String name;
+	private String grade;
 	public Student() {
 		super();
 	}
-	public Student(int studentId, String studentName, double gPA) {
+	public Student(String id, String name, String grade) {
 		super();
-		this.studentId = studentId;
-		this.studentName = studentName;
-		GPA = gPA;
+		this.id = id;
+		this.name = name;
+		this.grade = grade;
 	}
-	public int getStudentId() {
-		return studentId;
+	public String getId() {
+		return id;
 	}
-	public void setStudentId(int studentId) {
-		this.studentId = studentId;
+	public void setId(String id) {
+		this.id = id;
 	}
-	public String getStudentName() {
-		return studentName;
+	public String getName() {
+		return name;
 	}
-	public void setStudentName(String studentName) {
-		this.studentName = studentName;
+	public void setName(String name) {
+		this.name = name;
 	}
-	public double getGPA() {
-		return GPA;
+	public String getGrade() {
+		return grade;
 	}
-	public void setGPA(double gPA) {
-		GPA = gPA;
+	public void setGrade(String grade) {
+		this.grade = grade;
 	}
 	@Override
 	public String toString() {
-		return "Student [studentId=" + studentId + ", studentName=" + studentName + ", GPA=" + GPA + "]";
+		return "Student [id=" + id + ", name=" + name + ", grade=" + grade + "]";
 	}
-	
-	
 	
 
 }
