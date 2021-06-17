@@ -4,6 +4,7 @@ import comm.example.PrintRunnable;
 import comm.example.PrintThread;
 import comm.example.ThreadTest;
 
+@SuppressWarnings("unused")
 public class App {
 
 	public static void main(String[] args) {
