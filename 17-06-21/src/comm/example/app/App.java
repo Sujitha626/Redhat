@@ -1,5 +1,6 @@
 package comm.example.app;
 
+import comm.example.PrintRunnable;
 import comm.example.PrintThread;
 import comm.example.ThreadTest;
 
@@ -14,10 +15,22 @@ public class App {
 		 * t2=new Thread(test); t2.start();
 		 */
 
-		new PrintThread("A");
-		// thread1.start();
-		new PrintThread("B");
-		// thread2.start();
-	}
+		/*
+		 * new PrintThread("A"); // thread1.start(); new PrintThread("B"); //
+		 * thread2.start();
+		 */	
+		
+		/*
+		 * PrintRunnable printRunnable=new PrintRunnable("A"); Thread t1=new
+		 * Thread(printRunnable); t1.start(); PrintRunnable printRunnable1=new
+		 * PrintRunnable("B"); Thread t2=new Thread(printRunnable1); t2.start();
+		 */
+		new PrintRunnable("A");
+		new PrintRunnable("B");
+		
+		
+		
+		
+		}
 
 }
