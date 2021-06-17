@@ -5,6 +5,7 @@ public class PrintThread extends Thread{
 	public PrintThread(String name)
 	{
 		super(name);
+		start();
 	}
 
 	@Override
