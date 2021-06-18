@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.example.dao.EmployeeDao;
 import org.example.dao.EmployeeDaoImpl;
+import org.example.dao.EmployeeNotFoundException;
 import org.example.model.Employee;
 
 public class EmployeeServiceImpl implements EmployeeService{
@@ -26,6 +27,24 @@ public class EmployeeServiceImpl implements EmployeeService{
 	public List<Employee> getAllEmployees() throws SQLException {
 		// TODO Auto-generated method stub
 		return employeeDao.getAllEmployees();
+	}
+
+	@Override
+	public List<Employee> findById(Integer id) throws SQLException {
+		
+		return employeeDao.findById(id);
+	}
+
+	@Override
+	public Employee updateEmployee(Integer id) throws SQLException {
+		// TODO Auto-generated method stub
+		Employee employee=null;
+		try {
+			employee=employeeDao.updateEmployee(id);
+		} catch (SQLException | EmployeeNotFoundException e) {
+			System.err.println(e.getMessage());
+		}
+		return employee;
 	}
 
 }
