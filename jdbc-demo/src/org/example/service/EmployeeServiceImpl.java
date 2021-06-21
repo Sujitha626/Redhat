@@ -1,6 +1,8 @@
 package org.example.service;
 
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.Resultset;
 import java.util.List;
 
 import org.example.dao.EmployeeDao;
@@ -8,43 +10,46 @@ import org.example.dao.EmployeeDaoImpl;
 import org.example.dao.EmployeeNotFoundException;
 import org.example.model.Employee;
 
-public class EmployeeServiceImpl implements EmployeeService{
-
-	private EmployeeDao employeeDao;
+@SuppressWarnings("unused")
+public abstract class EmployeeServiceImpl implements EmployeeService{
+private EmployeeDao employeeDao;
 	
 	
 	public EmployeeServiceImpl() throws SQLException {
 		employeeDao=new EmployeeDaoImpl();
 	}
-
 	@Override
 	public Employee createEmployee(Employee employee) throws SQLException {
-		// TODO Auto-generated method stub
+		
 		return employeeDao.createEmployee(employee);
 	}
 
 	@Override
 	public List<Employee> getAllEmployees() throws SQLException {
-		// TODO Auto-generated method stub
 		return employeeDao.getAllEmployees();
 	}
-
-	@Override
-	public List<Employee> findById(Integer id) throws SQLException {
+	
+	public ResultSet searchEmployee(int searchId) throws SQLException {
 		
-		return employeeDao.findById(id);
+		return employeeDao.searchEmployee(searchId);
 	}
-
-	@Override
-	public Employee updateEmployee(Integer id) throws SQLException {
-		// TODO Auto-generated method stub
+	
+	public Employee updateEmployee(int id) throws SQLException{
 		Employee employee=null;
 		try {
 			employee=employeeDao.updateEmployee(id);
-		} catch (SQLException | EmployeeNotFoundException e) {
-			System.err.println(e.getMessage());
-		}
-		return employee;
+			
+			
+	} catch (EmployeeNotFoundException e) {
+		
+		
 	}
-
+	return employee;
+	}
+	@Override
+	public List<Employee> deleteEmployee(int id) throws SQLException, EmployeeNotFoundException {
+		 return employeeDao.deleteEmployee(id);
+		
+		
+	}	
 }

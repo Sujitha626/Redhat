@@ -76,10 +76,13 @@ public class EmployeeDaoImpl implements EmployeeDao {
 
 		System.out.println("enter new first name: ");
 		String firstName = scanner.next();
+		firstName=firstName.toUpperCase();
 		System.out.println("enter new last name: ");
 		String lastName = scanner.next();
+		lastName=lastName.toUpperCase();
 		System.out.println("enter new email: ");
 		String email = scanner.next();
+		email=email.toLowerCase();
 
 		PreparedStatement preparedStatement = connection
 				.prepareStatement("update employee set first_name=?,last_name=?,email=? where id=?");
@@ -94,6 +97,31 @@ public class EmployeeDaoImpl implements EmployeeDao {
 		employee.setLastName(lastName);
 		employee.setEmail(email);
 		return employee;
+	}
+	public List<Employee> deleteEmployee(int id) throws SQLException, EmployeeNotFoundException
+	{
+		ResultSet list = searchEmployee(id);
+		List<Employee> list1 = new ArrayList<Employee>();
+		while(list.next())
+		{
+			list1.add(new Employee(list.getInt(1),list.getString(2),list.getString(3),list.getString(4)));
+		
+		}
+		if(list1.isEmpty())
+		{
+			throw new EmployeeNotFoundException("Employee not found with id"+id);
+		}
+		PreparedStatement preparedStatement=connection.prepareStatement("delete from employee where employee_id=?");
+		preparedStatement.setInt(1, id);
+		preparedStatement.executeUpdate();
+		System.out.println("Deleted sucessfull!");
+		
+		return list1;
+	}
+
+	public ResultSet searchEmployee(int id) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
