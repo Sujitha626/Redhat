@@ -14,7 +14,7 @@ import org.hibernate.SessionFactory;
 
 
 @SuppressWarnings("unused")
-public class EmployeeDaoImpl implements EmployeeDao {
+public class EmployeeDaoImpl<employee> implements EmployeeDao {
 	
 	private MySessionFactory mySessionFactory;
 	private SessionFactory sessionFactory;
@@ -73,15 +73,26 @@ public class EmployeeDaoImpl implements EmployeeDao {
 		tempEmployee.setLastName(lastName);
 		tempEmployee.setEmail(email);
 		session.getTransaction().begin();
+		//merge for update an existing entity
 		session.merge(tempEmployee);
 		session.getTransaction().commit();
+		
 		return tempEmployee;
+		
 		
 	}
 
 	@Override
-	public void deleteEmployee(Integer id) {
+	public Employee deleteEmployee(Integer id) {
 		// TODO Auto-generated method stub
+		session=sessionFactory.openSession();
+		Employee tempEmployee=session.get(Employee.class,id);
+		if(tempEmployee==null)
+		{
+			throw new EmployeeNotFoundException("employee not found");
+			
+		}
+		return tempEmployee;
 
 	}
 

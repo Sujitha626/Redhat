@@ -1,13 +1,8 @@
 package org.example.hibernate_crud_demo.factory;
-
 import java.util.Properties;
-
 import org.example.hibernate_crud_demo.model.Employee;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
-
-
-
 public class MySessionFactory {
 
 	private static MySessionFactory mySessionFactory;
