@@ -1,4 +1,4 @@
-package org.example.demo.model;
+package org.example.model;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
