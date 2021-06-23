@@ -6,6 +6,7 @@ import org.example.hibernate_crud_demo.dao.EmployeeDao;
 import org.example.hibernate_crud_demo.dao.EmployeeDaoImpl;
 import org.example.hibernate_crud_demo.model.Employee;
 
+@SuppressWarnings("rawtypes")
 public class EmployeeServiceImpl implements EmployeeService {
 
 	private EmployeeDao employeeDao;

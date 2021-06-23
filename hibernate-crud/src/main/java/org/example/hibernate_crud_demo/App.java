@@ -14,6 +14,7 @@ import org.example.hibernate_crud_demo.model.Employee;
 import org.example.hibernate_crud_demo.service.EmployeeService;
 import org.example.hibernate_crud_demo.service.EmployeeServiceImpl;
 
+@SuppressWarnings("unused")
 public class App 
 {
 private static Logger logger=Logger.getLogger("org.example.hibernate_crud_demo.App.class");
