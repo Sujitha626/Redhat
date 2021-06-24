@@ -1,7 +1,5 @@
 package org.example.demo;
 
-import org.example.demo.model.CricketCoach;
-import org.example.demo.model.SwimmingCoach;
 import org.example.demo.model.InternationalCD;
 import org.example.demo.model.SpecialEditionCD;
 import org.example.demo.model.Coach;
@@ -43,11 +41,8 @@ public class App
 			//System.out.println(cd.getDetails());
 			//SpecialEditionCD cd1=context.getBean("theCD1",SpecialEditionCD.class);
 			//System.out.println(cd1.getDetails());
-			//MyInterface cd=context.getBean("theCD", MyInterface.class);
-			//System.out.println(cd.getDetails());
-         Coach tempCoach= context.getBean("theCoach",CricketCoach.class);
-         System.out.println(tempCoach.getDailyworkOut());
-         System.out.println(tempCoach.getDailyFortune());
+			MyInterface cd=context.getBean("theCD", MyInterface.class);
+			System.out.println(cd.getDetails());
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
