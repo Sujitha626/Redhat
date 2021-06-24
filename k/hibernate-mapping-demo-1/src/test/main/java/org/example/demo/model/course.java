@@ -24,7 +24,7 @@ import lombok.NoArgsConstructor;
 @Data
 @Entity
 @Table(name="instructor")
-public class Course {
+public class course {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
@@ -49,18 +49,18 @@ public class Course {
 			CascadeType.PERSIST,CascadeType.REFRESH
 	})
 	
-	private List<Course> course;
-	public void add(Course tempCourse)
+	private List<course> course;
+	public void add(course tempCourse)
 	{
 		if(course==null)
 		{
-			course=new ArrayList<Course>();
+			course=new ArrayList<course>();
 			
 		}
 		course.add(tempCourse);
 		tempCourse.setInstructor(this);
 	}
-	private void setInstructor(Course course2) {
+	private void setInstructor(course course2) {
 		// TODO Auto-generated method stub
 		
 	}
