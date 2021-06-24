@@ -14,9 +14,14 @@
 <constructor-arg index="1" value="Titanic"/>
 <constructor-arg index="2" value="3D"/>
 </bean> -->
-<bean name="theCD" class="model2.InternationalCD">
+<!-- <bean name="theCD" class="model2.InternationalCD">
 <constructor-arg index="0" value="4"/>
 <constructor-arg index="1" value="dave"/>
 <constructor-arg index="2" value="computer"/>
-</bean>
+</bean> -->
+<bean name="theCoach" class="org.example.demo.model.CricketCoach">
+	<property name="fortuneService" ref="myFortuneService"/>
+	</bean>
+	<bean name="myFortuneService"
+		class="org.example.demo.model.SadFortuneService"/>
 </beans>
